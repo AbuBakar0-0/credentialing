@@ -1,101 +1,86 @@
-import Image from "next/image";
+import Dropdown from "./components/Dropdown";
+import TextField from "./components/TextField";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <>
+      <div className="h-screen bg-white flex flex-col justify-start items-start p-10 text-black gap-4">
+        <div className="w-full flex flex-col gap-4">
+          <h1 className="text-2xl">Providers</h1>
+          <div className="w-full flex flex-wrap justify-start gap-4 items-start">
+            <TextField title={"First Name"} label={"first_name"} />
+            <TextField
+              title={"Middle Initial"}
+              label={"middle_initial"}
+              required={false}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <TextField title={"Last Name"} label={"last_name"} />
+
+            <TextField title={"Title"} label={"title"} required={false} />
+            <TextField title={"DOB"} label={"dob"} type="date" />
+            <TextField title={"SSN"} label={"ssn"} required={false} />
+
+            <TextField title={"Home Address"} label={"address"} />
+            <TextField
+              title={"Home Address 2"}
+              label={"address_2"}
+              required={false}
+            />
+            <TextField title={"ZIP"} label={"zip"} />
+
+            <TextField title={"City"} label={"city"} required={false} />
+            <TextField title={"State"} label={"state"} required={false} />
+            <TextField
+              title={"Home Ph."}
+              label={"home_phone"}
+              required={false}
+            />
+
+            <TextField
+              title={"Office Ph."}
+              label={"office_phone"}
+              required={false}
+            />
+            <TextField
+              title={"Cell Ph."}
+              label={"cell_phone"}
+              required={false}
+            />
+            <TextField
+              title={"Email"}
+              label={"email"}
+              required={false}
+              type="email"
+            />
+
+            <TextField title={"License"} label={"license"} required={false} />
+            <TextField title={"NPI"} label={"npi"} />
+            <TextField title={"UPIN"} label={"upin"} required={false} />
+
+            <TextField title={"Tax ID"} label={"tax_id"} />
+            <Dropdown label={"speciality"} title={"Speciality"} />
+            <TextField title={"Group NPI"} label={"group_npi"} />
+            <TextField title={"DEA"} label={"dea"} />
+
+            <TextField
+              title={"DEA Expiry"}
+              label={"dea_exp"}
+              required={false}
+              type="date"
+            />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <div className="w-full flex flex-col gap-4">
+          <h1 className="text-2xl">Taxanomy</h1>
+          <div className="w-full flex flex-wrap justify-start gap-4 items-start">
+            <Dropdown title={"Type"} label={"type"}/>
+            <Dropdown title={"Code One"} label={"code_one"}/>
+            <Dropdown title={"Code Two"} label={"code_two"}/>
+
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
