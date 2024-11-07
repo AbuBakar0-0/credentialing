@@ -130,8 +130,11 @@ const Dropdown = ({ title, label, required = true }) => {
             title: "Vascular Surgery"
         }
     ];
+
+
     return (
         <>
+            
             <div className="w-1/5">
                 <label htmlFor={label} className="block mb-2 text-sm font-medium text-black">{title} {required ? <span className="text-red-500">*</span> : <></>}</label>
                 <select name={title} id={label} className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-semibold">

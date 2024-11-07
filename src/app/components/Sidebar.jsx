@@ -28,7 +28,7 @@ export default function Sidebar() {
                     </Link>
                 </div>
                 <nav className="p-4">
-                    <ul className="flex flex-col gap-y-4 text-white text-lg">
+                    <ul className="flex flex-col gap-y-4 text-white text-xl">
                         <li className="w-full p-3 flex items-center gap-3 rounded-lg hover:bg-blue-600 transition-colors duration-200">
                             <FaHome />
                             <Link href="/">

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 
-const TextField = ({ title, label, required = true, type = "text" }) => {
+const TextField = ({ title, label, required = true, type = "text", readonly = "false" }) => {
     const [inputValue, setInputValue] = useState('');
     let placeholder = title;
 
@@ -100,6 +100,7 @@ const TextField = ({ title, label, required = true, type = "text" }) => {
                 value={inputValue}
                 onChange={handleInputChange}
                 required={required}
+                readOnly={readonly}
             />
         </div>
     );
