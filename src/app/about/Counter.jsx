@@ -2,21 +2,33 @@ import CounterCard from "./CounterCard";
 function Counter() {
 
     const counterData = [
+        // {
+        //   title: "Provider records across 757 specialties",
+        //   number: 4.8,
+        // },
+        // {
+        //   title: "Providers verified their data within the past 120 days",
+        //   number: 1.4,
+        // },
+        // {
+        //   title: "Of all US physicians participating",
+        //   number: 73,
+        // },
+        // {
+        //   title: "Participating dentists",
+        //   number: 101,
+        // },
         {
-          title: "Provider records across 757 specialties",
-          number: 4.8,
+          title:"Covers a broad range of medical specialties.",
         },
         {
-          title: "Providers verified their data within the past 120 days",
-          number: 1.4,
+          title:"Easy, quick data verification for accurate provider information.",
         },
         {
-          title: "Of all US physicians participating",
-          number: 73,
+          title:"Secure, centralized platform for credential management.",
         },
         {
-          title: "Participating dentists",
-          number: 101,
+          title:"Ensures compliance with healthcare industry standards",
         },
       ];
 
@@ -30,11 +42,14 @@ function Counter() {
                 <div className="w-1/4 h-[4px] bg-primary my-2"></div>
                 <div className="bg-secondary flex flex-wrap justify-around items-center rounded-2xl border-4 w-full p-10 shadow-3xl gap-5">
                     {counterData.map((item, index) => (
-                        <CounterCard
-                            key={index}
-                            title={item.title}
-                            number={item.number}
-                        />
+                      <div className="w-full md:w-1/5 flex flex-row justify-center md:justify-center items-center gap-4 text-white text-center text-xl" key={index}>
+                        {item.title}
+                      </div>
+                        // <CounterCard
+                        //     key={index}
+                        //     title={item.title}
+                        //     number={item.number}
+                        // />
                     ))}
                 </div>
             </div>

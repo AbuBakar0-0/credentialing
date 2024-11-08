@@ -3,10 +3,10 @@ import { IoIosArrowForward } from "react-icons/io"
 function Hero() {
     return (
         <>
-            <div className="w-full min-h-[65vh] p-10 lg:p-20 flex flex-row justify-start items-center bg-white gap-5 bg-hero-credentialing bg-cover bg-center bg-no-repeat border-y-8 border-primary">
+            <div className="w-full min-h-[38rem] p-10 lg:p-20 flex flex-row justify-start items-center bg-white gap-5 bg-hero-credentialing bg-cover bg-center bg-no-repeat border-y-8 border-primary">
                 <div className="w-full lg:w-1/2 flex flex-col justify-center items-start gap-5">
-                    <h1 className="w-full text-5xl lg:text-8xl text-secondary font-semibold text-left">
-                        Revive Your Medical
+                    <h1 className="w-full text-5xl lg:text-6xl text-secondary font-semibold text-left">
+                    Revolutionize Your Medical
                         <span className="text-primary"> Practice</span>
                     </h1>
                     <h2 className="w-full text-xl text-left">

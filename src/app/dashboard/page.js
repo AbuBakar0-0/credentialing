@@ -1,91 +1,90 @@
-import Dropdown from "../components/Dropdown";
+"use client";
 import Sidebar from "../components/Sidebar";
-import TextField from "../components/TextField";
+import { FaArrowCircleRight } from "react-icons/fa";
+import ProvidersInformation from "./ProvidersInformation";
+import { useState } from "react";
+import EducationAndTraining from "./EducationAndTraining";
+import HospitalAffiliations from "./HospitalAffiliations";
+import EmploymentInformation from './EmploymentInformation';
 
 export default function Dashboard() {
+  const sidenavLinks = [
+    {
+      title: "Personal Information",
+      component: <ProvidersInformation />,
+    },
+    {
+      title: "Professioanl IDs",
+      component: <></>,
+    },
+    {
+      title: "Education & Professional Training",
+      component: <EducationAndTraining/>,
+    },
+    {
+      title: "Specialities",
+      component: <></>,
+    },
+    {
+      title: "Practice Locations",
+      component: <></>,
+    },
+    {
+      title: "Hospital Affiliations",
+      component: <HospitalAffiliations/>,
+    },
+    {
+      title: "Credentialing Contracts",
+      component: <></>,
+    },
+    {
+      title: "Professional Liability Insurance",
+      component: <></>,
+    },
+    {
+      title: "Employment Information",
+      component: <EmploymentInformation/>,
+    },
+    {
+      title: "Professional References",
+      component: <></>,
+    },
+    {
+      title: "Disclosures",
+      component: <></>,
+    },
+  ];
+
+  let [view, setView] = useState(sidenavLinks[0]["component"]);
+
+  const handleChange = (item) => {
+    setView(item);
+  };
   return (
     <>
       <div className="flex">
-        <Sidebar />
+        {/* <Sidebar /> */}
+        <div className="flex w-1/5 justify-center items-start p-10">
+          <div className="w-full flex flex-col justify-center items-center gap-3 border-gray-400 border-2 shadow-xl p-3 rounded-xl">
+            {sidenavLinks.map((item, index) => (
+              <div
+                onClick={() => {
+                  handleChange(item.component);
+                }}
+                className="w-full flex flex-row justify-start items-center gap-4 uppercase hover:cursor-pointer"
+                key={index}
+              >
+                <div className="min-w-6 min-h-6">
+                  <FaArrowCircleRight className="w-full h-full text-primary" />
+                </div>
+                <p>{item.title}</p>
+              </div>
+            ))}
+          </div>
+        </div>
         <main className="flex-1">
-          <div className="h-screen bg-white flex flex-col justify-start items-start p-10 text-black gap-4">
-            <div className="w-full flex flex-col gap-4">
-              <h1 className="text-2xl">Providers</h1>
-              <div className="w-full flex flex-wrap justify-start gap-4 items-start">
-                <TextField title={"First Name"} label={"first_name"} />
-                <TextField
-                  title={"Middle Initial"}
-                  label={"middle_initial"}
-                  required={false}
-                />
-                <TextField title={"Last Name"} label={"last_name"} />
-
-                <TextField title={"Title"} label={"title"} required={false} />
-                <TextField title={"DOB"} label={"dob"} type="date" />
-                <TextField title={"SSN"} label={"ssn"} required={false} />
-
-                <TextField title={"Home Address"} label={"address"} />
-                <TextField
-                  title={"Home Address 2"}
-                  label={"address_2"}
-                  required={false}
-                />
-                <TextField title={"ZIP"} label={"zip"} />
-
-                <TextField title={"City"} label={"city"} required={false} />
-                <TextField title={"State"} label={"state"} required={false} />
-                <TextField
-                  title={"Home Ph."}
-                  label={"home_phone"}
-                  required={false}
-                />
-
-                <TextField
-                  title={"Office Ph."}
-                  label={"office_phone"}
-                  required={false}
-                />
-                <TextField
-                  title={"Cell Ph."}
-                  label={"cell_phone"}
-                  required={false}
-                />
-                <TextField
-                  title={"Email"}
-                  label={"email"}
-                  required={false}
-                  type="email"
-                />
-
-                <TextField
-                  title={"License"}
-                  label={"license"}
-                  required={false}
-                />
-                <TextField title={"NPI"} label={"npi"} />
-                <TextField title={"UPIN"} label={"upin"} required={false} />
-
-                <TextField title={"Tax ID"} label={"tax_id"} />
-                <Dropdown label={"speciality"} title={"Speciality"} />
-                <TextField title={"Group NPI"} label={"group_npi"} />
-                <TextField title={"DEA"} label={"dea"} />
-
-                <TextField
-                  title={"DEA Expiry"}
-                  label={"dea_exp"}
-                  required={false}
-                  type="date"
-                />
-              </div>
-            </div>
-
-            <div className="w-full flex flex-col gap-4">
-              <h1 className="text-2xl">Taxanomy</h1>
-              <div className="w-full flex flex-wrap justify-start gap-4 items-start">
-                <Dropdown title={"Description"} label={"description"} />
-                <TextField title={"Code"} label={"code"} readonly="true"/>
-              </div>
-            </div>
+          <div className="bg-white flex flex-col justify-start items-start p-10 text-black gap-4">
+            {view}
           </div>
         </main>
       </div>

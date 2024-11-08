@@ -11,15 +11,18 @@ import Clients from "../components/Home/Clients";
 import Footer from "../components/Footer";
 
 function Credentialing() {
-  const [formData, setFormData] = useState({
+  // Initial form data state
+  const initialFormData = {
     last_name: "",
     first_name: "",
-    contact_person: "",
+    contact_number: "",
     no_of_providers: "",
     practice_type: "",
     phone: "",
     email: "",
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
 
   // Update form data in state
   const handleChange = (field, value) => {
@@ -32,6 +35,7 @@ function Credentialing() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Send the form data using emailjs
     emailjs
       .send(
         "service_5qe514z",
@@ -42,6 +46,9 @@ function Credentialing() {
       .then((response) => {
         console.log("Email sent successfully!", response.status, response.text);
         alert("Email sent successfully!");
+
+        // Clear the form after successful submission
+        setFormData(initialFormData);
       })
       .catch((error) => {
         console.error("Failed to send email:", error);

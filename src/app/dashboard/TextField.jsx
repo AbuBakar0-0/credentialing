@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 
-const TextField = ({ title, label, required = true, type = "text", readonly = "false" }) => {
+const TextField = ({ title, label, required = true, type = "text", readonly = false }) => {
     const [inputValue, setInputValue] = useState('');
     let placeholder = title;
 
@@ -72,17 +72,19 @@ const TextField = ({ title, label, required = true, type = "text", readonly = "f
             placeholder = "MM/DD/YYYY";
             break;
         case "SSN":
-            placeholder = "XXX-XX-XXXX";
+            placeholder = "___-__-____";
             break;
         case "Zip":
-            placeholder = "XXXXX-XXXX";
+            placeholder = "_____-____";
             break;
         case "Home Ph.":
         case "Office Ph.":
         case "Cell Ph.":
-            placeholder = "(XXX) XXX-XXXX";
+            placeholder = "(___) ___-____";
             break;
         case "Email":
+        case "Work Email":
+        case "Personal Email":
             placeholder = "yourname@example.com";
             break;
     }
