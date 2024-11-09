@@ -6,4 +6,4 @@ function AddEducation() {
   )
 }
 
-export default page
+export default AddEducation
