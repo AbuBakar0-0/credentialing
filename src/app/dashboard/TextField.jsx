@@ -62,7 +62,14 @@ const TextField = ({ title, label, required = true, type = "text", readonly = fa
     };
 
     const handleInputChange = (e) => {
-        let formattedValue = formatInput(e.target.value);
+        let value = e.target.value;
+
+        // Limit to 2 characters if the title is "Middle Initial"
+        if (title === "Middle Initial") {
+            value = value.slice(0, 2);
+        }
+
+        const formattedValue = formatInput(value);
         setInputValue(formattedValue);
     };
 
@@ -89,8 +96,19 @@ const TextField = ({ title, label, required = true, type = "text", readonly = fa
             break;
     }
 
+    var width = "w-1/5";
+    switch (title) {
+        case "Street Address 1":
+        case "Street Address 2":
+        case "Mailing Address":
+        case "Mailing Address 2":
+        case "Professional School":
+            width = "w-[41.5%]";
+            break;
+    }
+
     return (
-        <div className="w-1/5">
+        <div className={width}>
             <label htmlFor={label} className="block mb-2 text-sm font-medium text-black">
                 {title} {required ? <span className="text-red-500">*</span> : null}
             </label>

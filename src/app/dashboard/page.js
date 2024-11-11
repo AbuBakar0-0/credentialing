@@ -6,6 +6,8 @@ import { useState } from "react";
 import EducationAndTraining from "./EducationAndTraining";
 import HospitalAffiliations from "./HospitalAffiliations";
 import EmploymentInformation from './EmploymentInformation';
+import ProfessionalIds from "./ProfessionalIds";
+import Specialities from "./Specialities";
 
 export default function Dashboard() {
   const sidenavLinks = [
@@ -14,16 +16,16 @@ export default function Dashboard() {
       component: <ProvidersInformation />,
     },
     {
-      title: "Professioanl IDs",
-      component: <></>,
+      title: "Professional IDs",
+      component: <ProfessionalIds/>,
     },
     {
-      title: "Education & Professional Training",
+      title: "Education & Training",
       component: <EducationAndTraining/>,
     },
     {
       title: "Specialities",
-      component: <></>,
+      component: <Specialities/>,
     },
     {
       title: "Practice Locations",
