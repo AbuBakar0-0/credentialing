@@ -7,6 +7,9 @@ const TextField = ({ title, label, required = true, type = "text", readonly = fa
 
     // Formatting functions for various input types
     const formatInput = (value) => {
+        if (title.includes("Date")) {
+            return formatDOB(value);
+        }
         switch (title) {
             case "SSN":
                 return formatSSN(value);
@@ -35,11 +38,18 @@ const TextField = ({ title, label, required = true, type = "text", readonly = fa
 
     const formatDOB = (value) => {
         value = value.replace(/\D/g, ''); // Remove non-numeric characters
+
+        // Limit the year part to 4 digits after MM/DD
+        if (value.length > 8) {
+            value = value.slice(0, 8); // Limit input to MMDDYYYY
+        }
+
         if (value.length > 2 && value.length <= 4) {
             return `${value.slice(0, 2)}/${value.slice(2)}`;
         } else if (value.length > 4) {
-            return `${value.slice(0, 2)}/${value.slice(2, 4)}/${value.slice(4, 8)}`;
+            return `${value.slice(0, 2)}/${value.slice(2, 4)}/${value.slice(4)}`;
         }
+
         return value;
     };
 

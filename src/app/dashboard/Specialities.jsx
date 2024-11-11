@@ -214,16 +214,6 @@ function Specialities() {
                     </div>
                 </div>
 
-                <p className='w-full text-lg'>Advanced Cardiac Life Support (BLS)</p>
-
-                <div className="w-full">
-                    <label htmlFor="provider_title" className="block mb-2 text-sm font-medium text-black">Advanced Cardiac Life Support (BLS)<span className="text-red-500">*</span></label>
-                    <div className='w-full flex flex-row justify-start items-center gap-4'>
-                        <input type="radio" name="training" /> Yes
-                        <input type="radio" name="training" /> No
-                    </div>
-                </div>
-
                 <p className='w-full text-lg'>Advanced Cardiac Life Support (ACLS)</p>
 
                 <div className="w-full">

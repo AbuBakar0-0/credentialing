@@ -8,6 +8,7 @@ import HospitalAffiliations from "./HospitalAffiliations";
 import EmploymentInformation from './EmploymentInformation';
 import ProfessionalIds from "./ProfessionalIds";
 import Specialities from "./Specialities";
+import PracticeLocations from "./PracticeLocations";
 
 export default function Dashboard() {
   const sidenavLinks = [
@@ -29,7 +30,7 @@ export default function Dashboard() {
     },
     {
       title: "Practice Locations",
-      component: <></>,
+      component: <PracticeLocations/>,
     },
     {
       title: "Hospital Affiliations",
@@ -37,10 +38,6 @@ export default function Dashboard() {
     },
     {
       title: "Credentialing Contracts",
-      component: <></>,
-    },
-    {
-      title: "Professional Liability Insurance",
       component: <></>,
     },
     {

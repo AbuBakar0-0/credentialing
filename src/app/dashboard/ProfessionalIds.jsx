@@ -1,6 +1,7 @@
 import { useState } from "react";
 import HeadingLine from "./HeadingLine";
 import TextField from "./TextField";
+import { CiLink } from "react-icons/ci";
 
 function ProfessionalIds() {
     const [medicareFields, setMedicareFields] = useState([{ id: "", issue_date: "", expiry_date: "" }]);
@@ -146,6 +147,9 @@ function ProfessionalIds() {
                     <div className="w-1/5">
                         <label htmlFor="provider_title" className="block mb-2 text-sm font-medium text-black">Aggregate<span className="text-red-500">*</span></label>
                         <select name="provider_title" id="provider_title" className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-semibold">
+                            <option value="1,000,000-2,000,000">1,000,000-2,000,000</option>
+                            <option value="1,000,000-3,000,000">1,000,000-3,000,000</option>
+                            <option value="2,000,000-4,000,000">2,000,000-4,000,000</option>
                         </select>
                     </div>
 
@@ -161,34 +165,84 @@ function ProfessionalIds() {
                     <div className="w-1/5">
                         <label htmlFor="provider_title" className="block mb-2 text-sm font-medium text-black">Aggregate<span className="text-red-500">*</span></label>
                         <select name="provider_title" id="provider_title" className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 font-semibold">
+                            <option value="1,000,000-2,000,000">1,000,000-2,000,000</option>
+                            <option value="1,000,000-3,000,000">1,000,000-3,000,000</option>
+                            <option value="2,000,000-4,000,000">2,000,000-4,000,000</option>
                         </select>
                     </div>
                 </div>
                 <HeadingLine title={"Web Portal Info"} />
 
-                <div className="w-full flex flex-wrap justify-start gap-4 items-start">
+                <div className="w-full flex flex-wrap justify-start gap-4 items-end">
+                    <TextField title={"CAQH User Id"} label={"username"} />
                     <TextField title={"CAQH Username"} label={"username"} />
                     <TextField title={"CAQH Password"} label={"password"} type="password" />
+                    <a
+                        href="https://proview.caqh.org/Login/Index?ReturnUrl=%2fpo"
+                        className="bg-secondary text-white size-10 flex justify-center items-center rounded-lg relative group"
+                    >
+                        <CiLink className="size-8" />
+
+                        {/* Tooltip */}
+                        <span className="absolute bottom-full mb-2 w-max px-2 py-1 text-xs text-white bg-black rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                            https://proview.caqh.org/Login/Index?ReturnUrl=%2fpo
+                        </span>
+                    </a>
                 </div>
 
-                <div className="w-full flex flex-wrap justify-start gap-4 items-start">
+                <div className="w-full flex flex-wrap justify-start gap-4 items-end">
                     <TextField title={"Pecos Username"} label={"username"} />
                     <TextField title={"Pecos Password"} label={"password"} type="password" />
+                    <a
+                        href="https://pecos.cms.hhs.gov/pecos/login.do#headingLv1"
+                        className="bg-secondary text-white size-10 flex justify-center items-center rounded-lg relative group"
+                    >
+                        <CiLink className="size-8" />
+
+                        {/* Tooltip */}
+                        <span className="absolute bottom-full mb-2 w-max px-2 py-1 text-xs text-white bg-black rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                            https://pecos.cms.hhs.gov/pecos/login.do#headingLv1
+                        </span>
+                    </a>
+
                 </div>
 
-                <div className="w-full flex flex-wrap justify-start gap-4 items-start">
-                    <TextField title={"Medicaid Portal Username"} label={"username"} />
-                    <TextField title={" Medicaid PortalPassword"} label={"password"} type="password" />
+                <div className="w-full flex flex-wrap justify-start gap-4 items-end">
+                    <TextField title={"Medicaid Username"} label={"username"} />
+                    <TextField title={" Medicaid Password"} label={"password"} type="password" />
                 </div>
 
-                <div className="w-full flex flex-wrap justify-start gap-4 items-start">
+                <div className="w-full flex flex-wrap justify-start gap-4 items-end">
                     <TextField title={"Availilty Username"} label={"username"} />
                     <TextField title={"Availilty Password"} label={"password"} type="password" />
+                    <a
+                        href="https://apps.availity.com/web/onboarding/availity-fr-ui/#/login"
+                        className="bg-secondary text-white size-10 flex justify-center items-center rounded-lg relative group"
+                    >
+                        <CiLink className="size-8" />
+
+                        {/* Tooltip */}
+                        <span className="absolute bottom-full mb-2 w-max px-2 py-1 text-xs text-white bg-black rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                            https://apps.availity.com/web/onboarding/availity-fr-ui/#/login
+                        </span>
+                    </a>
+
                 </div>
 
-                <div className="w-full flex flex-wrap justify-start gap-4 items-start">
+                <div className="w-full flex flex-wrap justify-start gap-4 items-end">
                     <TextField title={"UHC Username"} label={"username"} />
                     <TextField title={"UHC Password"} label={"password"} type="password" />
+                    <a
+                        href="https://www.uhcprovider.com/en/resource-library/provider-portal-resources.html"
+                        className="bg-secondary text-white size-10 flex justify-center items-center rounded-lg relative group"
+                    >
+                        <CiLink className="size-8" />
+
+                        {/* Tooltip */}
+                        <span className="absolute bottom-full mb-2 w-max px-2 py-1 text-xs text-white bg-black rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                            https://www.uhcprovider.com/en/resource-library/provider-portal-resources.html
+                        </span>
+                    </a>
                 </div>
 
             </div>
